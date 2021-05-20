@@ -1,0 +1,77 @@
+<div *ngIf="!nextPage" class="main-content">
+    <h2>Sign up for email updates</h2>
+    <p>*Indicates required Fields</p>
+    <mat-form class="content-form" [formGroup]="form">
+        <div class="error-messages">
+            <div *ngIf="form.get('firstName').invalid && (form.get('firstName').dirty || form.get('firstName').touched)">First name is required</div>
+            <div *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty || form.get('lastName').touched)">Last name is required</div>
+            <div *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">A valid Email address is required</div>
+            <div *ngIf="form.get('euResident').invalid && (form.get('euResident').dirty || form.get('euResident').touched)">Answer of European Residency is required</div>
+            <div *ngIf="!isFormValid">At least one of the checkboxes is required</div>
+        </div>
+        <div class="row">
+            <div class="form-input">
+                <label>First Name*</label><br>
+                <input type="text" formControlName="firstName" maxlength="40">
+            </div>
+            <div class="form-input">
+                <label>Last Name*</label><br>
+                <input type="text" formControlName="lastName" maxlength="40">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-input">
+                <label>Email Address*</label><br>
+                <input type="email" formControlName="email" ngModel email>
+            </div>
+            <div class="form-input">
+                <label>Organization</label><br>
+                <input type="text" formControlName="org">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-input">
+                <label>EU Resident*</label><br>
+                <mat-select #selectEUresident disableOptionCentering class="form-control" formControlName="euResident" panelClass="panel-custom" [ngClass]="{'panel-open': selectEUresident.panelOpen}" aria-label="Dropdown List with custom arrow to answer if user is an European Resident ">
+                    <mat-option value='' selected hidden disabled>- Select One -</mat-option>
+                    <mat-option value=Yes>Yes</mat-option>
+                    <mat-option value=No>No</mat-option>
+                </mat-select>
+            </div>
+        </div>
+    </mat-form>
+    <mat-form class="content-form" [formGroup]="checkForm">
+        <div class="row">
+            <section>
+                <mat-checkbox class="form-checkbox" formControlName="Advances" required>Advances</mat-checkbox>
+                <mat-checkbox class="form-checkbox" formControlName="Alerts" required>Alerts</mat-checkbox>
+                <mat-checkbox class="form-checkbox" formControlName="Other" required>Other</mat-checkbox>
+            </section>
+        </div>
+    </mat-form>
+    <div class="error-messages mobile">
+        <div *ngIf="form.get('firstName').invalid && (form.get('firstName').dirty || form.get('firstName').touched)">First name is required</div>
+        <div *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty || form.get('lastName').touched)">Last name is required</div>
+        <div *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">A valid Email address is required</div>
+        <div *ngIf="form.get('euResident').invalid && (form.get('euResident').dirty || form.get('euResident').touched)">Answer of European Residency is required</div>
+        <div *ngIf="checkForm.get('Advances').value === false && checkForm.get('Alerts').value === false && checkForm.get('Other').value === false">At least one of the checkboxes is required</div>
+    </div>
+    <div class="row">
+        <button mat-raised-button class="class-button submit" [disabled]="!form.valid || !isFormValid" (click)="submit()">Submit</button>
+        <button mat-raised-button (click)="reset()" class="class-button">Reset</button>
+    </div>
+</div>
+
+<div class="main-content result-page" *ngIf="nextPage">
+    <div class="main-message">
+        <div *ngIf="!response">
+            <h2>Loading...</h2>
+        </div>
+        <div *ngIf="response">
+            <h2>
+                <mat-icon *ngIf="response.status === 'success'" style="color: green; font-weight: 600; margin-left: -1em;" aria-label="check-mark">done</mat-icon> {{ response.status | titlecase }}</h2>
+            <p>{{ response.message }}</p>
+        </div>
+    </div>
+
+</div>

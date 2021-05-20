@@ -1,0 +1,40 @@
+{
+    "responses": [{
+            "id": 1,
+            "status": "success",
+            "message": "Thank you. You are now subscribed."
+        },
+        {
+            "id": 2,
+            "status": "error",
+            "message": "Invalid Subscription request."
+        }
+    ],
+    "posts": [{
+            "id": 1,
+            "email": "testemail@domain.org",
+            "euResident": "Yes",
+            "fieldName": {
+                "Advances": true,
+                "Alerts": true,
+                "Other": true
+            },
+            "firstName": "FirstName",
+            "lastName": "LastName",
+            "org": "orgname"
+        },
+        {
+            "firstName": "Jordan",
+            "lastName": "Gonçalves",
+            "email": "jordanhgoncalves@gmail.com",
+            "org": "test",
+            "euResident": "Yes",
+            "fieldName": {
+                "Advances": true,
+                "Alerts": true,
+                "Other": false
+            },
+            "id": 2
+        }
+    ]
+}

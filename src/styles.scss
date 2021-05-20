@@ -1,1 +1,301 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    transition: all .2s ease;
+}
+
+body {
+    background-image: url('./assets/texture.png');
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-repeat: repeat;
+    background-size: 300px 300px;
+}
+
+.main-content {
+    margin: auto;
+    width: 55%;
+    padding-top: 2em;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+    p {
+        color: #575757;
+    }
+    h2 {
+        font-weight: 800;
+        letter-spacing: 0.0625em;
+    }
+}
+
+.content-form {
+    padding-top: 1em;
+    width: 100%;
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 768px) {
+            display: inline-block;
+        }
+        .form-input {
+            width: 100%;
+            margin-right: 7vh;
+            margin-bottom: 4vh;
+            label {
+                color: #404040;
+                text-transform: uppercase;
+                letter-spacing: 0.125em;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+input,
+mat-select,
+option {
+    width: 100%;
+    border: 3px solid #d0e8e6;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1.4vh;
+    outline: none !important;
+    @media screen and (max-width: 768px) {
+        padding-right: 0;
+        width: 95%;
+    }
+}
+
+input {
+    &.ng-invalid.ng-touched,
+    &.ng-invalid.ng-dirty {
+        border: 3px solid #f294a6;
+        background-color: #f8e7e7;
+    }
+    &:focus {
+        border: 3px solid #a1d2ce;
+    }
+}
+
+.ng-disabled {
+    background-color: #989898;
+}
+
+.error-messages {
+    font-style: italic;
+    color: #ee4266;
+    font-weight: 600;
+    letter-spacing: 0.03125em;
+    padding-bottom: 10px;
+    min-height: 5vh;
+    bottom: 0;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.alert {
+    border: 3px solid #750707;
+}
+
+textarea {
+    &:focus {
+        border: 3px solid #a1d2ce;
+        outline: none !important;
+    }
+}
+
+mat-select {
+    width: 30% !important;
+    appearance: none;
+    cursor: pointer;
+    background-color: white;
+    &.ng-invalid.ng-touched,
+    &.ng-invalid.ng-dirty {
+        border: 3px solid #f294a6;
+        background-color: #f8e7e7;
+    }
+    @media screen and (max-width: 768px) {
+        width: 60% !important;
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: none;
+}
+
+.mat-select-arrow {
+    border-left: 10px solid transparent !important;
+    border-right: none !important;
+    border-top: 15px solid transparent !important;
+    border-image-repeat: stretch !important;
+    border-image-source: url('./assets/text-expand-arrow.svg');
+}
+
+.panel-custom {
+    background: rgba(247, 247, 247, 1);
+    border: 3px solid #a1d2ce;
+    border-top: none;
+    margin-top: 36px !important;
+    margin-left: -2px !important;
+    width: 30%;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px !important;
+        margin-left: 3px !important;
+        margin-right: -100px !important
+    }
+    .mat-select-arrow {
+        border-left: 10px solid transparent !important;
+        border-right: none !important;
+        border-top: 15px solid transparent !important;
+        border-image-repeat: stretch !important;
+        border-image-source: url('./assets/text-expand-arrow.svg');
+    }
+    transition: all 0.3 ease;
+}
+
+.panel-open {
+    .mat-select-arrow {
+        border-left: 15px solid transparent !important;
+        border-right: none !important;
+        border-top: 10px solid transparent !important;
+        border-image-repeat: stretch !important;
+        border-image-source: url('./assets/text-expand-arrow-focus.svg') !important;
+        transition: all 0.3 ease;
+    }
+}
+
+.mat-option:hover:not(.mat-option-disabled) {
+    background-color: #e1f0ef;
+    transition: all .3s ease;
+}
+
+.mat-option.mat-active {
+    font-weight: 600;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+    background-color: white;
+}
+
+.mat-option {
+    border-bottom: 1px solid #a1d2ce;
+    @media screen and (max-width: 768px) {
+        min-width: 100%;
+    }
+}
+
+.form-checkbox {
+    width: 50%;
+    margin-bottom: 4vh;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+    label {
+        color: #404040;
+        text-transform: uppercase;
+        letter-spacing: 0.125em;
+        font-weight: 500;
+    }
+}
+
+.mat-checkbox.mat-accent {
+    .mat-checkbox-inner-container {
+        height: 30px;
+        width: 30px;
+        background-color: white;
+        margin-right: 20px;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+    .mat-checkbox-layout .mat-checkbox-label {
+        line-height: 30px;
+    }
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #803093 !important;
+    border: none;
+}
+
+mat-checkbox {
+    .mat-checkbox-background {
+        background-color: white;
+        border: 3px solid #d0e8e6;
+    }
+}
+
+.class-button {
+    border-radius: 25px !important;
+    padding: 5px !important;
+    margin-right: 3vh !important;
+    width: 21%;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.0625em;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5) !important;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 3vh !important;
+    }
+}
+
+.mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.submit {
+    background-color: #803093;
+    color: white;
+    &.ng-disabled {
+        background-color: #989898 !important;
+    }
+}
+
+.result-page {
+    margin: auto;
+    top: 30%;
+    width: 55%;
+    height: auto;
+    position: relative;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background-color: rgba(255, 255, 255, 0.432);
+    border: 3px solid #a1d2ce;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    @media screen and (max-width: 768px) {
+        width: 85%;
+    }
+    .main-message {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        margin: 0 auto;
+        position: relative;
+        h2 {
+            font-size: 1.7em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
