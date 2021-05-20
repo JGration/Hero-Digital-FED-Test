@@ -1,6 +1,6 @@
 # HeroDigitalFrontEndTest
 
-Run npm install && npm start.
+Run `npm install && npm start`
 
 ---Default Angular readme below---
 
