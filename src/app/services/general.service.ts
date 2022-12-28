@@ -19,13 +19,13 @@ export class GeneralService {
   private postUrl: string = 'http://localhost:3000/posts';
   constructor(private http: HttpClient) { }
 
-  getSuccess(): Observable<any>{
-    return this.http.get<any>(this.responseUrl + '/1')
+  getSuccess(): Observable<[]>{
+    return this.http.get<[]>(this.responseUrl + '/1')
   }
   getError(): Observable<any>{
-    return this.http.get<any>(this.responseUrl + '/2')
+    return this.http.get<[]>(this.responseUrl + '/2')
   }
-  postForm(obj: any): Observable<any> {
+  postForm(obj: string): Observable<object> {
     return this.http.post(this.postUrl, decodeURI(obj), httpOptions) 
   }
 }

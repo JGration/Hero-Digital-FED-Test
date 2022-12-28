@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   checkForm: FormGroup;
   isFormValid: boolean = true;
   nextPage: boolean = false;
-  response: any[];
+  response = [];
   constructor(
     private fb: FormBuilder,
     private db: GeneralService,
